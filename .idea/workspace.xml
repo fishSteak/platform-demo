@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c1a6b45a-c7b2-4c5a-891a-2d8f6ac66f7d" name="Changes" comment="初始化3">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/common/AuthInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/common/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/common/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/common/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/common/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/common/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/common/handler/ListHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/ActivityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/FileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/LogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/MessageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/NoticeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/PermissionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/RoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/SalaryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/Activity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/Log.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/Notice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/Permission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/Salary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/exception/CustomException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mapper/ActivityMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mapper/LogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mapper/MessageMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mapper/NoticeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mapper/PermissionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mapper/RoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mapper/SalaryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/ActivityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/LogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/MessageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/NoticeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/PermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/SalaryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/generator/MybatisCodeGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/generator/TableColumn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/generator/template/controller.template" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/generator/template/create_table.template" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/generator/template/mapper.template" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/generator/template/mapper_xml.template" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/generator/template/service.template" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/generator/template/vue.template" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/banner.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/Activity.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/Log.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/Notice.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/Permission.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/Role.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/Salary.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/User.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/audio.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/element.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/fonts/element-icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/fonts/element-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/music.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/file/1622537239707-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/file/1628915794059-05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/file/1649664115414-1648121067107108.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/file/1649664692293-1648121067107108.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/file/1649664696378-1648121067107108.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/file/1649664712475-16481212215073.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/file/1649664842825-16481212215073.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/file/1649669666126-90.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/file/1649669724077-90.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/file/1649669764120-90.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/bg1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/next.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/pause.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/prev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/volume.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/audio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/base.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/china.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/echarts.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/element.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/gVerify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/music.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/icons/default/icons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/icons/default/icons.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/jquery.tinymce.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/langs/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/langs/zh_CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/advlist/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/advlist/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/anchor/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/anchor/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/autolink/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/autolink/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/autoresize/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/autoresize/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/autosave/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/autosave/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/bbcode/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/bbcode/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/charmap/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/charmap/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/code/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/code/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/codesample/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/codesample/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/colorpicker/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/colorpicker/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/contextmenu/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/contextmenu/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/directionality/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/directionality/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/emoticons/js/emojiimages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/emoticons/js/emojiimages.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/emoticons/js/emojis.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/emoticons/js/emojis.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/emoticons/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/emoticons/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/fullpage/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/fullpage/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/fullscreen/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/fullscreen/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/help/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/help/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/hr/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/hr/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/image/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/image/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/imagetools/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/imagetools/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/importcss/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/importcss/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/insertdatetime/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/insertdatetime/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/legacyoutput/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/legacyoutput/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/link/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/link/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/lists/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/lists/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/media/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/media/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/nonbreaking/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/nonbreaking/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/noneditable/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/noneditable/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/pagebreak/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/pagebreak/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/paste/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/paste/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/preview/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/preview/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/print/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/print/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/quickbars/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/quickbars/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/save/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/save/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/searchreplace/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/searchreplace/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/spellchecker/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/spellchecker/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/tabfocus/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/tabfocus/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/table/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/table/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/template/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/template/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/textcolor/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/textcolor/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/textpattern/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/textpattern/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/toc/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/toc/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/visualblocks/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/visualblocks/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/visualchars/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/visualchars/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/wordcount/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/plugins/wordcount/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/content/dark/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/content/dark/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/content/dark/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/content/default/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/content/default/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/content/default/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/content/document/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/content/document/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/content/document/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/content/writer/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/content/writer/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/content/writer/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/content.inline.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/content.inline.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/content.inline.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/content.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/content.mobile.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/content.mobile.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/fonts/tinymce-mobile.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/skin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/skin.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/skin.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/skin.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/skin.mobile.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/skin.mobile.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/skin.shadowdom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/skin.shadowdom.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide-dark/skin.shadowdom.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/content.inline.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/content.inline.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/content.inline.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/content.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/content.mobile.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/content.mobile.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/fonts/tinymce-mobile.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/skin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/skin.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/skin.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/skin.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/skin.mobile.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/skin.mobile.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/skin.shadowdom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/skin.shadowdom.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/skins/ui/oxide/skin.shadowdom.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/themes/mobile/theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/themes/mobile/theme.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/themes/silver/theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/themes/silver/theme.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/tinymce.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tinymce/tinymce.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/vue.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/activity.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/auth.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/log.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/message.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/notice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/permission.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/person.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/role.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/salary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/front/frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/front/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/front/index2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/front/message.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/page/front/person.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/service/ActivityServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/springbootmybatisplus/SpringBootMybatisPlusApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/banner.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/Application.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/common/AuthInterceptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/common/CorsConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/common/MybatisPlusConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/common/Result.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/common/SwaggerConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/common/WebMvcConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/common/handler/ListHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/controller/ActivityController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/controller/FileController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/controller/LogController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/controller/MessageController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/controller/NoticeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/controller/PermissionController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/controller/RoleController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/controller/SalaryController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/controller/UserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Activity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Log.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Message.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Notice.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Permission.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Role.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Salary.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/exception/CustomException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/mapper/ActivityMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/mapper/LogMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/mapper/MessageMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/mapper/NoticeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/mapper/PermissionMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/mapper/RoleMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/mapper/SalaryMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/mapper/UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/service/ActivityService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/service/LogService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/service/MessageService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/service/NoticeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/service/PermissionService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/service/RoleService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/service/SalaryService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/utils/generator/MybatisCodeGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/utils/generator/TableColumn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Activity.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Log.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Notice.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Permission.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Role.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Salary.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/User.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/audio.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/element.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/fonts/element-icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/fonts/element-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/music.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/file/1622537239707-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/file/1628915794059-05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/file/1649664115414-1648121067107108.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/file/1649664692293-1648121067107108.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/file/1649664696378-1648121067107108.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/file/1649664712475-16481212215073.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/file/1649664842825-16481212215073.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/file/1649669666126-90.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/file/1649669724077-90.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/file/1649669764120-90.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/bg1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/next.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/pause.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/prev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/volume.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/audio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/base.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/china.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/echarts.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/element.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/gVerify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/music.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/icons/default/icons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/icons/default/icons.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/jquery.tinymce.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/langs/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/langs/zh_CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/advlist/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/advlist/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/anchor/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/anchor/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/autolink/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/autolink/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/autoresize/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/autoresize/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/autosave/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/autosave/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/bbcode/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/bbcode/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/charmap/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/charmap/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/code/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/code/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/codesample/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/codesample/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/colorpicker/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/colorpicker/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/contextmenu/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/contextmenu/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/directionality/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/directionality/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/emoticons/js/emojiimages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/emoticons/js/emojiimages.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/emoticons/js/emojis.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/emoticons/js/emojis.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/emoticons/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/emoticons/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/fullpage/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/fullpage/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/fullscreen/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/fullscreen/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/help/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/help/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/hr/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/hr/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/image/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/image/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/imagetools/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/imagetools/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/importcss/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/importcss/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/insertdatetime/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/insertdatetime/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/legacyoutput/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/legacyoutput/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/link/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/link/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/lists/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/lists/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/media/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/media/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/nonbreaking/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/nonbreaking/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/noneditable/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/noneditable/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/pagebreak/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/pagebreak/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/paste/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/paste/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/preview/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/preview/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/print/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/print/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/quickbars/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/quickbars/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/save/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/save/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/searchreplace/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/searchreplace/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/spellchecker/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/spellchecker/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/tabfocus/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/tabfocus/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/table/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/table/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/template/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/template/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/textcolor/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/textcolor/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/textpattern/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/textpattern/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/toc/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/toc/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/visualblocks/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/visualblocks/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/visualchars/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/visualchars/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/wordcount/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/plugins/wordcount/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/content/dark/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/content/dark/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/content/dark/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/content/default/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/content/default/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/content/default/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/content/document/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/content/document/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/content/document/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/content/writer/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/content/writer/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/content/writer/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/content.inline.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/content.inline.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/content.inline.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/content.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/content.mobile.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/content.mobile.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/fonts/tinymce-mobile.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/skin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/skin.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/skin.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/skin.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/skin.mobile.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/skin.mobile.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/skin.shadowdom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/skin.shadowdom.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide-dark/skin.shadowdom.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/content.inline.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/content.inline.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/content.inline.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/content.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/content.mobile.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/content.mobile.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/fonts/tinymce-mobile.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/skin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/skin.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/skin.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/skin.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/skin.mobile.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/skin.mobile.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/skin.shadowdom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/skin.shadowdom.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/skins/ui/oxide/skin.shadowdom.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/themes/mobile/theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/themes/mobile/theme.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/themes/silver/theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/themes/silver/theme.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/tinymce.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/tinymce/tinymce.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/vue.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/end/activity.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/end/auth.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/end/frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/end/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/end/log.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/end/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/end/message.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/end/notice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/end/permission.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/end/person.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/end/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/end/role.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/end/salary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/end/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/front/frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/front/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/front/index2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/front/message.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/front/person.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/example/service/ActivityServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/example/springbootmybatisplus/SpringBootMybatisPlusApplicationTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x-admin.sql" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="fishsteak &lt;cutevillainrole@gmail.com&gt;" />
+        <option value="fish &lt;cutevillainrole@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="C:\MyLocalRepository" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="27Y6L7784VNkeaBDsgZHSllvlzv" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/page/front" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\githubProject\platform-demo\src\main\resources\static\page\front" />
+      <recent name="C:\githubProject\platform-demo\src\test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\githubProject\spring20210814\src\main\resources\static" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.service" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="MybatisCodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.utils.generator.MybatisCodeGenerator" />
+      <module name="platform-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.utils.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActivityServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="platform-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.service.ActivityServiceTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActivityServiceTest.save" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="platform-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.service.ActivityServiceTest" />
+      <option name="METHOD_NAME" value="save" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="platform-demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MybatisCodeGenerator" />
+      <item itemvalue="JUnit.ActivityServiceTest" />
+      <item itemvalue="JUnit.ActivityServiceTest.save" />
+      <item itemvalue="Spring Boot.Application" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MybatisCodeGenerator" />
+        <item itemvalue="JUnit.ActivityServiceTest.save" />
+        <item itemvalue="JUnit.ActivityServiceTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c1a6b45a-c7b2-4c5a-891a-2d8f6ac66f7d" name="Changes" comment="" />
+      <created>1649484617593</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1649484617593</updated>
+      <workItem from="1649484622785" duration="7293000" />
+      <workItem from="1649492373936" duration="1653000" />
+      <workItem from="1649562871948" duration="24000" />
+      <workItem from="1649579785093" duration="33000" />
+      <workItem from="1649579846351" duration="35000" />
+      <workItem from="1649654962687" duration="1092000" />
+      <workItem from="1649656075002" duration="527000" />
+      <workItem from="1649656617120" duration="14857000" />
+      <workItem from="1649679598136" duration="416000" />
+    </task>
+    <task id="LOCAL-00001" summary="初始化``````````````````````````">
+      <created>1649486739758</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1649486739758</updated>
+    </task>
+    <task id="LOCAL-00002" summary="初始化2">
+      <created>1649493074424</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649493074424</updated>
+    </task>
+    <task id="LOCAL-00003" summary="初始化3">
+      <created>1649679712077</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649679712077</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="初始化``````````````````````````" />
+    <MESSAGE value="初始化2" />
+    <MESSAGE value="初始化3" />
+    <option name="LAST_COMMIT_MESSAGE" value="初始化3" />
+  </component>
+</project>

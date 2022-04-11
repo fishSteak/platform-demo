@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="../../css/element.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <style>
+        .el-col {
+            border-radius: 4px;
+        }
+        .bg-purple-dark {
+            background: #99a9bf;
+        }
+        .bg-purple {
+            background: #d3dce6;
+        }
+        .bg-purple-light {
+            background: #e5e9f2;
+        }
+        .grid-content {
+            border-radius: 4px;
+            min-height: 36px;
+        }
+        .row-bg {
+            padding: 10px 0;
+            background-color: #f9fafc;
+        }
+    </style>
+</head>
+<body class="frame-body">
+<div id="wrapper" v-cloak>
+
+    <el-row :gutter="24">
+        <el-col :span="12" :offset="6">
+            <!--context -->
+            <div class="grid-content bg-purple"></div>
+            <el-tabs type="border-card">
+                <el-tab-pane label="开启的活动">开启的活动</el-tab-pane>
+                <el-tab-pane label="关闭的活动">关闭的活动</el-tab-pane>
+                <el-tab-pane label="其他分类">其他分类(待开发)</el-tab-pane>
+            </el-tabs>
+        </el-col>
+    </el-row>
+
+
+</div>
+
+<!--    js-->
+<script src="../../js/jquery.min.js"></script>
+
+<script src="../../js/vue.min.js"></script>
+<script src="../../js/element.js"></script>
+
+<script>
+    new Vue({
+        el: "#wrapper",
+        data: {
+            src: 'message.html',
+            search: '',
+            tableData: [],
+            pageNum: 1,
+            pageSize: 10,
+            total: 0,
+            user: {},
+            imgList: [
+                'https://img.zcool.cn/community/01e1605ef84d6ca80120662165f99a.png@1280w_1l_2o_100sh.png',
+                'https://img.zcool.cn/community/014f335ef84d6ba801215aa0e5572e.png@1280w_1l_2o_100sh.png',
+                'https://img.zcool.cn/community/014c235ef84d6ca801215aa030eb99.png@1280w_1l_2o_100sh.png'
+            ]
+        },
+        created() {
+            $.ajax({
+                url: '/api/user/session',
+                method: "GET",
+                async: false,
+                success: (res) => {
+                    this.user = res.data || {}
+                }
+            })
+            this.loadTable()
+        },
+        methods: {
+            sign(obj) {
+
+            },
+            logout() {
+                $.get("/api/user/logout");
+                sessionStorage.removeItem("user");
+                location.href = "/page/end/login.html";
+            },
+            loadTable() {
+                $.get("/api/activity/page?pageNum=" + this.pageNum + "&pageSize=" + this.pageSize + "&name=" + this.search).then(res => {
+                    this.tableData = res.data.records;
+                    this.total = res.data.total;
+                })
+            },
+            handleSizeChange(pageSize) {
+                this.pageSize = pageSize;
+                this.loadTable();
+            },
+            handleCurrentChange(pageNum) {
+                this.pageNum = pageNum;
+                this.loadTable();
+            },
+        }
+    })
+</script>
+</body>
+</html>
