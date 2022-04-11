@@ -17,8 +17,8 @@ public class MybatisCodeGenerator {
     private static final DruidDataSource ds = new DruidDataSource();
 
     private static final String schemaName = "x_admin";   // 数据库名称，必填
-    private static final String[] table = {"t_activity", "Activity"};   // 必填，第一个是表名，第二个是实体类的名字
-    private static final String modelName = "活动";   // 必填
+    private static final String[] table = {"t_registration", "Registration"};   // 必填，第一个是表名，第二个是实体类的名字
+    private static final String modelName = "活动报名";   // 必填
 
     //=========================================以上内容必填===================================================//
 
@@ -261,7 +261,7 @@ public class MybatisCodeGenerator {
                 formBuilder.append(space12 + space4 + "</el-select>\n");
             } else if (tableColumn.getColumnName().endsWith("file") || tableColumn.getColumnName().endsWith("img")) {
                 // 文件上传
-                formBuilder.append(space12 + space4 + "<el-upload action=\"http://localhost:9999/files/upload\" :on-success=\"fileSuccessUpload\" :file-list=\"fileList\">\n");
+                formBuilder.append(space12 + space4 + "<el-upload action=\"/files/upload\" :on-success=\"fileSuccessUpload\" :file-list=\"fileList\">\n");
                 formBuilder.append(space12 + space4 + space4 + "<el-button size=\"small\" type=\"primary\">点击上传</el-button>\n");
                 formBuilder.append(space12 + space4 + "</el-upload>\n");
             } else {
