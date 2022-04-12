@@ -22,9 +22,6 @@
     <el-input size='small' v-model="search" style="width: 20%;" suffix-icon="el-icon-search" placeholder="请输入名称按回车搜索"
               @keyup.enter.native="loadTable"></el-input>
     <el-button size='small' @click="add" type="primary" style="margin: 10px 0">新增</el-button>
-    <!--    <el-upload action="/files/upload" :on-success="successUpload" :show-file-list="false" style="display: inline-block">-->
-    <!--        <el-button size='small' type="primary">导入</el-button>-->
-    <!--    </el-upload>-->
     <el-button size='small' @click="exp" type="primary" style="margin: 10px 0">导出</el-button>
     <el-table :data="tableData" border stripe style="width: 100%">
         <el-table-column prop="id" label="ID" width="40"></el-table-column>
@@ -37,9 +34,16 @@
             </template>
         </el-table-column>
         <el-table-column prop="number" label="人数总量"></el-table-column>
-        <el-table-column prop="starttime" label="开始时间"></el-table-column>
+        <el-table-column prop="starttime" label="开始时间"  ></el-table-column>
         <el-table-column prop="endtime" label="结束时间"></el-table-column>
-        <el-table-column prop="state" label="状态"></el-table-column>
+        <el-table-column label="状态">
+            <template slot-scope="scope">
+                <el-tag
+                        :type="scope.row.state ? 'primary' : 'success'">
+                    {{scope.row.state ? "开启" : "关闭"}}
+                </el-tag>
+            </template>
+        </el-table-column>
         <el-table-column prop="username" label="举办人"></el-table-column>
         <!--  <el-table-column prop="version" label="乐观锁"></el-table-column>-->
 
@@ -98,7 +102,7 @@
                 <el-date-picker style="width: 80%" v-model="entity.starttime" type="datetime"
                                 value-format="yyyy-MM-dd HH:mm:ss" placeholder="选择日期时间"></el-date-picker>
             </el-form-item>
-            <el-form-item label="状态 0关闭 1开启" label-width="120px">
+            <el-form-item label="状态 false关闭 true开启" label-width="120px">
                 <el-input v-model="entity.state" autocomplete="off" style="width: 80%"></el-input>
             </el-form-item>
             <el-form-item label="举办人" label-width="120px">

@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1a6b45a-c7b2-4c5a-891a-2d8f6ac66f7d" name="Changes" comment="初始化3">
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/controller/RegistrationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Registration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/mapper/RegistrationMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/service/RegistrationService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Registration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/page/end/registration.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/utils/generator/MybatisCodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/generator/MybatisCodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/page/end/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/activity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/page/front/frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/page/front/frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/page/front/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/page/front/index2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/utils/generator/MybatisCodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/utils/generator/MybatisCodeGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/page/end/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/page/end/activity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/page/front/frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/page/front/frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/page/front/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/page/front/index2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +220,11 @@
       <workItem from="1649656617120" duration="14857000" />
       <workItem from="1649679598136" duration="416000" />
       <workItem from="1649680839321" duration="223000" />
-      <workItem from="1649683580453" duration="2896000" />
+      <workItem from="1649683580453" duration="3265000" />
+      <workItem from="1649756329114" duration="8172000" />
+      <workItem from="1649765627061" duration="518000" />
+      <workItem from="1649767053273" duration="397000" />
+      <workItem from="1649768411933" duration="5828000" />
     </task>
     <task id="LOCAL-00001" summary="初始化``````````````````````````">
       <created>1649486739758</created>
@@ -231,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649679712077</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="注册表单的初始化和简单的单表CRUD操作">
+      <created>1649686767540</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649686767540</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +276,7 @@
     <MESSAGE value="初始化``````````````````````````" />
     <MESSAGE value="初始化2" />
     <MESSAGE value="初始化3" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始化3" />
+    <MESSAGE value="注册表单的初始化和简单的单表CRUD操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="注册表单的初始化和简单的单表CRUD操作" />
   </component>
 </project>

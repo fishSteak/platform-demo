@@ -8,7 +8,6 @@ import cn.hutool.poi.excel.ExcelUtil;
 import cn.hutool.poi.excel.ExcelWriter;
 import com.example.common.Result;
 import com.example.entity.Registration;
-import com.example.service.ActivityService;
 import com.example.service.RegistrationService;
 import com.example.entity.User;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
@@ -16,7 +15,6 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.web.bind.annotation.*;
 import com.example.exception.CustomException;
-import cn.hutool.core.util.StrUtil;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
@@ -25,7 +23,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.*;
-import java.math.BigDecimal;
 
 @RestController
 @RequestMapping("/api/registration")
@@ -34,8 +31,7 @@ public class RegistrationController {
     private RegistrationService registrationService;
     @Resource
     private HttpServletRequest request;
-    @Resource
-    private ActivityService activityService;
+
 
     public User getUser() {
         User user = (User) request.getSession().getAttribute("user");
