@@ -1,11 +1,9 @@
 package com.example.entity;
 
+import com.baomidou.mybatisplus.annotation.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import com.baomidou.mybatisplus.annotation.TableId;
 
 import java.util.Date;
 
@@ -37,7 +35,8 @@ public class Registration extends Model<Registration> {
      * 申请时间(用户申请参加活动的时间)
      */
     @JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm")
-    private Date time;
+        @TableField(value = "time", fill = FieldFill.INSERT)
+    private String time;
 
     /**
      * 用户id

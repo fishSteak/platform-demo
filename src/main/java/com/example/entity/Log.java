@@ -1,10 +1,9 @@
 package com.example.entity;
 
+import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import com.baomidou.mybatisplus.annotation.TableId;
 
 
 @Data
@@ -24,6 +23,8 @@ public class Log extends Model<Log> {
     /**
       * 操作时间
       */
+    @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm")
+    @TableField(value = "time", fill = FieldFill.INSERT)
     private String time;
 
     /**

@@ -36,7 +36,7 @@ public class LogService extends ServiceImpl<LogMapper, Log> {
     public void log(String content) {
         Log log = new Log();
         log.setUser(getUser().getUsername());
-        log.setTime(DateUtil.formatDateTime(new Date()));
+//        log.setTime(DateUtil.now());
         log.setIp(getIpAddress());
         log.setContent(content);
         save(log);

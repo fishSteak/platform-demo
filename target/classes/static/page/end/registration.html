@@ -5,7 +5,7 @@
     <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
     <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
     <meta HTTP-EQUIV="expires" CONTENT="0">
-    <title>薪资管理</title>
+    <title>活动报名管理</title>
     <link rel="stylesheet" href="../../css/element.css">
     <link rel="stylesheet" href="../../css/base.css">
 </head>
@@ -14,7 +14,8 @@
     <div style="padding-bottom: 10px">
             <el-breadcrumb separator-class="el-icon-arrow-right">
                 <el-breadcrumb-item @click.native="parent.changeIndex('index')">首页</el-breadcrumb-item>
-                <el-breadcrumb-item>薪资管理</el-breadcrumb-item>
+                <el-breadcrumb-item @click.native="parent.changeIndex('activity')">活动管理</el-breadcrumb-item>
+                <el-breadcrumb-item>活动报名管理</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
 
@@ -28,9 +29,11 @@
 <!--    <el-button size='small' @click="exp" type="primary"  style="margin: 10px 0">导出</el-button>-->
     <el-table :data="tableData" border stripe style="width: 100%">
         <el-table-column prop="id" label="ID" width="100"> </el-table-column>
-        <el-table-column prop="description" label="描述"></el-table-column>
-        <el-table-column prop="name" label="名称"></el-table-column>
-        <el-table-column prop="salary" label="薪资列表"></el-table-column>
+        <el-table-column prop="activityId" label="活动id"></el-table-column>
+        <el-table-column prop="context" label="响应内容"></el-table-column>
+        <el-table-column prop="state" label="状态0不通过 1通过"></el-table-column>
+        <el-table-column prop="time" label="申请时间(用户申请参加活动的时间)"></el-table-column>
+        <el-table-column prop="userId" label="用户id"></el-table-column>
 
         <el-table-column
           fixed="right"
@@ -60,17 +63,23 @@
         </el-pagination>
     </div>
 
-    <el-dialog title="薪资信息" :visible.sync="dialogFormVisible" width="40%"
+    <el-dialog title="活动报名信息" :visible.sync="dialogFormVisible" width="40%"
                :close-on-click-modal="false">
         <el-form :model="entity">
-            <el-form-item label="描述" label-width="120px">
-                <el-input v-model="entity.description" autocomplete="off" style="width: 80%"></el-input>
+            <el-form-item label="活动id" label-width="120px">
+                <el-input v-model="entity.activityId" autocomplete="off" style="width: 80%"></el-input>
             </el-form-item>
-            <el-form-item label="名称" label-width="120px">
-                <el-input v-model="entity.name" autocomplete="off" style="width: 80%"></el-input>
+            <el-form-item label="响应内容" label-width="120px">
+                <el-input v-model="entity.context" autocomplete="off" style="width: 80%"></el-input>
             </el-form-item>
-            <el-form-item label="薪资列表" label-width="120px">
-                <el-input v-model="entity.salary" autocomplete="off" style="width: 80%"></el-input>
+            <el-form-item label="状态0不通过 1通过" label-width="120px">
+                <el-input v-model="entity.state" autocomplete="off" style="width: 80%"></el-input>
+            </el-form-item>
+            <el-form-item label="申请时间(用户申请参加活动的时间)" label-width="120px">
+                <el-date-picker style="width: 80%" v-model="entity.time" type="datetime" value-format="yyyy-MM-dd HH:mm:ss" placeholder="选择日期时间"></el-date-picker>
+            </el-form-item>
+            <el-form-item label="用户id" label-width="120px">
+                <el-input v-model="entity.userId" autocomplete="off" style="width: 80%"></el-input>
             </el-form-item>
 
         </el-form>
@@ -89,7 +98,7 @@
 
 <script>
 
-    let urlBase = "/api/salary/";
+    let urlBase = "/api/registration/";
     new Vue({
         el: "#wrapper",
         data: {
@@ -111,12 +120,12 @@
         },
         methods: {
             fileSuccessUpload(res) {
-                this.entity.file = "/files/" + res.data;
-                this.entity.img = "/files/" + res.data;
+                this.entity.file = "http://localhost:9999/files/" + res.data;
+                this.entity.img = "http://localhost:9999/files/" + res.data;
                 console.log(res)
             },
             successUpload(value) {
-                $.get("/api/salary/upload/" + value.data).then(res => {
+                $.get("/api/registration/upload/" + value.data).then(res => {
                     if (res.code === '0') {
                         this.$message({
                             message: "导入成功",
@@ -140,6 +149,7 @@
                 location.href = "/page/end/login.html";
             },
             loadTable() {
+                 localStorage.getItem("userId");
                 $.get(urlBase + "/page?pageNum=" + this.pageNum + "&pageSize=" + this.pageSize + "&name=" + this.search).then(res => {
                     this.tableData = res.data.records;
                     this.total = res.data.total;

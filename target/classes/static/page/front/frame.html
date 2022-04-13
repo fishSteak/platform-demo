@@ -29,7 +29,7 @@
                 </el-col>
                 <el-col :span="3">
                     <div v-if="user.id">
-                        <span>hello, tom</span>
+                        <span>hello, {{user.username}}</span>
                         <el-button @click="logout">退出</el-button>
                     </div>
                     <div v-else>
@@ -54,7 +54,7 @@
     <!-- main -->
 
 
-    <div style="text-align: center; position: fixed; bottom: 0; width: 100%">
+    <div style="text-align: center; /*position: fixed;*/ bottom: 0; width: 100%">
         <el-card>
             ©2022 page-end，授权信息
         </el-card>

@@ -14,6 +14,8 @@ import com.example.entity.User;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import com.example.exception.CustomException;
 import cn.hutool.core.util.StrUtil;
@@ -22,6 +24,7 @@ import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.*;
@@ -34,6 +37,8 @@ public class ActivityController {
     private ActivityService activityService;
     @Resource
     private HttpServletRequest request;
+    @Autowired
+    HttpServletRequest httpServletRequest;
 
     public User getUser() {
         User user = (User) request.getSession().getAttribute("user");
@@ -139,5 +144,6 @@ public class ActivityController {
         activityService.saveBatch(saveList);
         return Result.success();
     }
+
 
 }

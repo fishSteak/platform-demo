@@ -39,7 +39,8 @@
     <el-row :gutter="24">
         <el-col :span="18" :offset="3">
             <!--context -->
-            <el-input size='small' v-model="search" style="width: 20%;" suffix-icon="el-icon-search" placeholder="请输入活动名称按回车搜索"
+            <el-input size='small' v-model="search" style="width: 20%;" suffix-icon="el-icon-search"
+                      placeholder="请输入活动名称按回车搜索"
                       @keyup.enter.native="loadTable"></el-input>
             <el-tabs type="border-card">
                 <el-tab-pane label="开启的活动">
@@ -55,7 +56,8 @@
                                     </div>
                                     <!--<el-tag size="small">开启中</el-tag>-->
                                     <el-button type="primary" @click="moreInfo(o.id)" plain>活动详情</el-button>
-                                    <el-button type="success" class="button" plain>报名</el-button>
+                                    <el-button type="success" @click="activityIdEnroll(o.id)" class="button" plain>报名
+                                    </el-button>
                                 </div>
                             </el-card>
                         </el-col>
@@ -197,6 +199,34 @@
                     })
                     .catch(_ => {
                     });
+            },
+            activityIdEnroll(activityId) {
+                if (!this.user.id) {
+                    this.$message({
+                        message: "请登录！",
+                        type: "warning"
+                    })
+                    return
+                } else {
+                    $.ajax({
+                        url: ("/api/registration/enroll/" + activityId),
+                        type: "post"
+                    }).then(res => {
+                        if (res.code === '0') {
+                            this.$notify({
+                                title: '成功',
+                                message: res.data,
+                                type: 'success'
+                            });
+                        } else {
+                            this.$notify({
+                                title: '错误',
+                                message: res.msg
+                            });
+                        }
+                    })
+                }
+
             }
         }
     })
