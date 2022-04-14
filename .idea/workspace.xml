@@ -31,6 +31,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -61,6 +64,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="KotlinCodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -105,7 +111,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -264,7 +270,7 @@
       <workItem from="1649765627061" duration="518000" />
       <workItem from="1649767053273" duration="397000" />
       <workItem from="1649768411933" duration="27136000" />
-      <workItem from="1649898362203" duration="33005000" />
+      <workItem from="1649898362203" duration="33250000" />
     </task>
     <task id="LOCAL-00001" summary="初始化``````````````````````````">
       <created>1649486739758</created>
@@ -315,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649923241201</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="前端网页的实现 切换状态  下一步做 前台页面的已经报名的信息页面">
+      <created>1649944787873</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1649944787873</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +354,8 @@
     <MESSAGE value="完成活动管理和前台的活动任务的渲染和报名按钮的渲染" />
     <MESSAGE value="根据活动id拿到活动数据和用户数据 接口写好  sql写好；&#10;下一步 用户查看已经报名的活动，管理员审核活动报名的用户。" />
     <MESSAGE value="权限认证实现拦截和放行" />
-    <option name="LAST_COMMIT_MESSAGE" value="权限认证实现拦截和放行" />
+    <MESSAGE value="前端网页的实现 切换状态  下一步做 前台页面的已经报名的信息页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="前端网页的实现 切换状态  下一步做 前台页面的已经报名的信息页面" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -350,11 +364,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/controller/ActivityController.java</url>
           <line>57</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/controller/RegistrationController.java</url>
-          <line>100</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
