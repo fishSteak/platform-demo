@@ -13,6 +13,7 @@ import com.example.common.Result;
 import com.example.entity.Activity;
 import com.example.entity.Registration;
 import com.example.entity.User;
+import com.example.entity.vo.PageVO;
 import com.example.exception.CustomException;
 import com.example.service.ActivityService;
 import com.example.service.RegistrationService;
@@ -74,6 +75,7 @@ public class RegistrationController {
 
     /**
      * 根据活动id来拿到报名用户，分页查找。存在用户名字关键词就查找用户名字的用户;
+     *
      * @param activityId
      * @param username
      * @param pageNum
@@ -82,19 +84,21 @@ public class RegistrationController {
      */
     @GetMapping("/page")
     public Result<?> findPage(@NotNull @RequestParam(defaultValue = "", value = "activityId") String activityId,
-                              @RequestParam(defaultValue = "", value = "name") String username,
-                              @RequestParam(required = false,defaultValue = "1", value = "pageNum") Integer pageNum,
-                              @RequestParam(required = false,defaultValue = "10", value = "pageSize") Integer pageSize) {
-        LambdaQueryWrapper<Registration> query = Wrappers.<Registration>lambdaQuery().orderByDesc(Registration::getId);
-        /*if (StrUtil.isNotBlank(activityName)) {
+                              @RequestParam(defaultValue = "", value = "username") String username,
+                              @RequestParam(required = false, defaultValue = "1", value = "pageNum") Integer pageNum,
+                              @RequestParam(required = false, defaultValue = "10", value = "pageSize") Integer pageSize) {
+        /*LambdaQueryWrapper<Registration> query = Wrappers.<Registration>lambdaQuery().orderByDesc(Registration::getId);
+         *//*if (StrUtil.isNotBlank(activityName)) {
             //活动名字来搜索响应的数据
             query.like(Registration::getName, name);
-        }*/
+        }*//*
         if (username!=null){
 
         }
         //根据活动id查找对应的user-page封装
-        return Result.success(registrationService.page(new Page<>(pageNum, pageSize), query));
+        return Result.success(registrationService.page(new Page<>(pageNum, pageSize), query));*/
+        PageVO pageVO = registrationService.getRegistrationDTOs(Long.valueOf(activityId), username, pageNum, pageSize);
+        return Result.success(pageVO);
     }
 
     @GetMapping("/export")

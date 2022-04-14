@@ -24,22 +24,32 @@
     </div>
 
     <div style="height: 1px; margin: 10px 0; background-color: white"></div>
-
+    <el-tag type="info">用户名:</el-tag>
     <el-input size='small' v-model="search" style="width: 20%;" suffix-icon="el-icon-search" placeholder="请输入名称按回车搜索"
               @keyup.enter.native="loadTable"></el-input>
-    <el-button size='small' @click="add" type="primary" style="margin: 10px 0">新增</el-button>
+    <el-button type="primary" size="small" @click="loadTable" icon="el-icon-search">搜索</el-button>
+    <el-button size='small' @click="add" type="primary" style="float: right">新增</el-button>
     <!--    <el-upload action="/files/upload" :on-success="successUpload" :show-file-list="false" style="display: inline-block">-->
     <!--        <el-button size='small' type="primary">导入</el-button>-->
     <!--    </el-upload>-->
     <!--    <el-button size='small' @click="exp" type="primary"  style="margin: 10px 0">导出</el-button>-->
     <el-table :data="tableData" border stripe style="width: 100%">
-        <el-table-column prop="id" label="ID" width="100"></el-table-column>
-        <el-table-column prop="activityId" label="活动id"></el-table-column>
-        <el-table-column prop="context" label="响应内容"></el-table-column>
-        <el-table-column prop="state" label="状态0不通过 1通过"></el-table-column>
-        <el-table-column prop="time" label="申请时间(用户申请参加活动的时间)"></el-table-column>
-        <el-table-column prop="userId" label="用户id"></el-table-column>
-
+        <el-table-column prop="id" label="ID" width="50"></el-table-column>
+        <el-table-column prop="user.username" label="用户名"></el-table-column>
+        <el-table-column prop="user.nickName" label="用户别名"></el-table-column>
+        <el-table-column prop="user.email" label="邮箱"></el-table-column>
+        <el-table-column prop="user.address" label="地址"></el-table-column>
+        <el-table-column prop="user.age" label="年龄"></el-table-column>
+        <el-table-column label="放行/阻止">
+            <template slot-scope="scope">
+                <el-switch active-color="#13ce66"
+                           inactive-color="#ff4949"
+                        v-model="scope.row.state"
+                        @change="switchEdit(scope.row)">
+                </el-switch>
+            </template>
+        </el-table-column>
+        <el-table-column prop="time" label="创建时间"></el-table-column>
         <el-table-column
                 fixed="right"
                 label="操作"
@@ -48,11 +58,12 @@
                 <el-button type="primary" icon="el-icon-edit" circle size='small' @click="edit(scope.row)"></el-button>
                 <el-popconfirm
                         @onConfirm="del(scope.row.id)"
-                        title="确定删除？"
-                >
+                        title="确定删除？">
                     <el-button size='small' type="danger" icon="el-icon-delete" circle slot="reference"
                                style="margin-left: 10px"></el-button>
+
                 </el-popconfirm>
+
             </template>
         </el-table-column>
     </el-table>
@@ -159,7 +170,8 @@
             },
             loadTable() {
 
-                $.get(urlBase + "/page?pageNum=" + this.pageNum + "&pageSize=" + this.pageSize + "&activityId=" + localStorage.getItem("activityId")).then(res => {
+                $.get(urlBase + "/page?pageNum=" + this.pageNum + "&pageSize=" + this.pageSize + "&activityId=" + localStorage.getItem("activityId") + "&username=" + this.search).then(res => {
+                    console.log(res.data.records);
                     this.tableData = res.data.records;
                     this.total = res.data.total;
                 })
@@ -208,9 +220,15 @@
                 })
             },
             edit(obj) {
+                console.log(obj.state);
                 this.entity = JSON.parse(JSON.stringify(obj));
                 this.fileList = [];
                 this.dialogFormVisible = true;
+            },
+            switchEdit(obj) {
+                this.entity = JSON.parse(JSON.stringify(obj));
+                this.fileList = [];
+                this.save();
             },
             del(id) {
                 $.ajax({
