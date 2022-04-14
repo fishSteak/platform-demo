@@ -256,6 +256,7 @@
                 //从行拿到活动id存储，转跳到活动详情页面(从localStorage拿到id获得数据渲染)
                 let myEntity = JSON.parse(JSON.stringify(obj));
                 localStorage.setItem("activityId",JSON.parse(JSON.stringify(obj)).id);
+                localStorage.setItem("activityName",JSON.parse(JSON.stringify(obj)).name);
                 parent.changeIndex('registration');
             }
         }

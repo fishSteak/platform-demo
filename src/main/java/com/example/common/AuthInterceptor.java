@@ -27,12 +27,16 @@ public class AuthInterceptor implements HandlerInterceptor {
             response.sendRedirect("/page/end/login.html");
             return false;
         }
-//        List<Permission> permissions = userService.getPermissions(user.getId());
-//        if (permissions.stream().noneMatch(p -> servletPath.contains(p.getFlag())) && !servletPath.contains("index")) {
-//            response.sendRedirect("/page/end/auth.html");
-//            return false;
-//        }
-        return true;
+        List<Permission> permissions = userService.getPermissions(user.getId());
+        for (Permission permission : permissions) {
+            if (servletPath.contains(permission.getPath())) {//有路径地址，说明有权限
+                return true;
+            }
+        }response.sendRedirect("/page/end/auth.html");
+        return false;
+      /*  if (permissions.stream().anyMatch(p -> servletPath.contains(p.getPath())) && !servletPath.contains("index") ) {
+
+        }*/
     }
 
 }

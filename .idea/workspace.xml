@@ -4,51 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1a6b45a-c7b2-4c5a-891a-2d8f6ac66f7d" name="Changes" comment="初始化3">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_2_0_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_5_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/common/handler/DataAutoFill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/dto/RegistrationDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/utils/MyUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/common/handler/DataAutoFill.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/controller/RegistrationController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Registration.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/dto/RegistrationDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/mapper/RegistrationMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/service/RegistrationService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Registration.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/example/utils/MyUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__cn_hutool_hutool_all_5_5_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_hutool_hutool_all_5_8_0_M2.xml" afterDir="false" />
+    <list default="true" id="c1a6b45a-c7b2-4c5a-891a-2d8f6ac66f7d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/vo/PageVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/mapper/RegistrationMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/vo/PageVO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/example/mapper/RegistrationMapperTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform-demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/platform-demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/ActivityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/ActivityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/SalaryController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/Registration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/Salary.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mapper/SalaryMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/LogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/LogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/SalaryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/common/AuthInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/common/AuthInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/common/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/common/WebMvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/dto/RegistrationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/dto/RegistrationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mapper/RegistrationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mapper/RegistrationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/Registration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/Registration.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/page/end/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/activity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/page/end/auth.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/auth.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/page/end/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/page/end/salary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/page/end/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/page/front/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/page/front/index2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/ActivityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/controller/ActivityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/SalaryController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/entity/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Log.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/entity/Salary.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/mapper/SalaryMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/LogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/service/LogService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/SalaryService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/utils/generator/MybatisCodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/utils/generator/MybatisCodeGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/common/AuthInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/common/AuthInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/common/WebMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/common/WebMvcConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/entity/dto/RegistrationDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/entity/dto/RegistrationDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/mapper/RegistrationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/mapper/RegistrationMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/Registration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/Registration.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/page/end/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/page/end/activity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/page/end/salary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/page/front/frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/page/front/frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/page/front/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/page/front/index2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/page/end/auth.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/page/end/auth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/page/end/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/page/end/registration.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +80,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="abbreviatePackageNames" value="true" />
-    <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -146,12 +122,14 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.mapper" />
       <recent name="com.example.service" />
     </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean" />
+      <command value="mvn clean " />
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.Application">
@@ -181,18 +159,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ActivityServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PageVO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.entity.vo.PageVO" />
       <module name="platform-demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.service.*" />
+          <option name="PATTERN" value="com.example.entity.vo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.service" />
-      <option name="MAIN_CLASS_NAME" value="com.example.service.ActivityServiceTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -208,6 +183,22 @@
       <option name="PACKAGE_NAME" value="com.example.service" />
       <option name="MAIN_CLASS_NAME" value="com.example.service.ActivityServiceTest" />
       <option name="METHOD_NAME" value="save" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegistrationMapperTest.getActivityAndUserByAId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="platform-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.example.mapper.RegistrationMapperTest" />
+      <option name="METHOD_NAME" value="getActivityAndUserByAId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -234,17 +225,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.MybatisCodeGenerator" />
-      <item itemvalue="JUnit.ActivityServiceTest" />
+      <item itemvalue="Application.MyUtils" />
       <item itemvalue="JUnit.ActivityServiceTest.save" />
       <item itemvalue="Spring Boot.Application" />
-      <item itemvalue="Application.MyUtils" />
+      <item itemvalue="JUnit.RegistrationMapperTest.getActivityAndUserByAId" />
+      <item itemvalue="Application.PageVO" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RegistrationMapperTest.getActivityAndUserByAId" />
+        <item itemvalue="Application.PageVO" />
         <item itemvalue="Application.MyUtils" />
         <item itemvalue="Application.MybatisCodeGenerator" />
         <item itemvalue="JUnit.ActivityServiceTest.save" />
-        <item itemvalue="JUnit.ActivityServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -270,7 +263,8 @@
       <workItem from="1649756329114" duration="8172000" />
       <workItem from="1649765627061" duration="518000" />
       <workItem from="1649767053273" duration="397000" />
-      <workItem from="1649768411933" duration="27058000" />
+      <workItem from="1649768411933" duration="27136000" />
+      <workItem from="1649898362203" duration="19275000" />
     </task>
     <task id="LOCAL-00001" summary="初始化``````````````````````````">
       <created>1649486739758</created>
@@ -307,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649774516227</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="根据活动id拿到活动数据和用户数据 接口写好  sql写好；&#10;下一步 用户查看已经报名的活动，管理员审核活动报名的用户。">
+      <created>1649861631893</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649861631893</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +332,8 @@
     <MESSAGE value="初始化3" />
     <MESSAGE value="注册表单的初始化和简单的单表CRUD操作" />
     <MESSAGE value="完成活动管理和前台的活动任务的渲染和报名按钮的渲染" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成活动管理和前台的活动任务的渲染和报名按钮的渲染" />
+    <MESSAGE value="根据活动id拿到活动数据和用户数据 接口写好  sql写好；&#10;下一步 用户查看已经报名的活动，管理员审核活动报名的用户。" />
+    <option name="LAST_COMMIT_MESSAGE" value="根据活动id拿到活动数据和用户数据 接口写好  sql写好；&#10;下一步 用户查看已经报名的活动，管理员审核活动报名的用户。" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

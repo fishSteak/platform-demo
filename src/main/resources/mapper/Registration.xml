@@ -2,4 +2,44 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.mapper.RegistrationMapper">
 
+    <select id="getActivityAndUserByAId" resultMap="getActivityAndUserByAIdMap,total">
+        SELECT r.id rid,
+        r.activity_id raid,
+        u.id uid,
+        u.username uname,
+        u.nick_name,
+        u.email,
+        u.phone,
+        u.avatar,
+        u.role,
+        u.address,
+        u.age
+        FROM t_registration r
+        INNER JOIN t_user u ON r.user_id = u.id
+        WHERE r.activity_id = #{activityId}
+        <if test="username != null">
+            and u.username like concat('%',#{username},'%')
+        </if>
+        LIMIT #{pageSum}, #{pageSize};
+        SELECT FOUND_ROWS() as total;
+    </select>
+
+    <resultMap id="getActivityAndUserByAIdMap" type="com.example.entity.dto.RegistrationDTO">
+        <id property="activityId" column="raid"/>
+        <result property="id" column="rid"/>
+        <collection property="users" ofType="com.example.entity.User">
+            <id property="id" column="uid"/>
+            <result property="username" column="uname"/>
+            <result property="nickName" column="nick_name"/>
+            <result property="email" column="email"/>
+            <result property="phone" column="phone"/>
+            <result property="avatar" column="avatar"/>
+            <result property="address" column="address"/>
+            <result property="age" column="age"/>
+        </collection>
+    </resultMap>
+
+    <resultMap type="java.lang.Integer" id="total">
+        <result column="total"/>
+    </resultMap>
 </mapper>

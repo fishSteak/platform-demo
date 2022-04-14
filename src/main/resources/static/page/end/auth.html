@@ -16,7 +16,7 @@
 </head>
 <body>
 <div id="wrapper" v-cloak>
-    <el-container>
+    <!--<el-container>
         <el-aside :width="isCollapse ? '64px' : '200px'" style="background-color: black; transition:width .5s; min-height: 100vh">
             <div style="background-color: black; height: 60px; line-height: 60px; text-align: center;
                 color: white; font-size: 20px;">
@@ -24,7 +24,7 @@
                     <span name="fade" v-show="!isCollapse"><a href="/page/end/frame.html">后台管理系统</a></span>
                 </transition>
             </div>
-            <!-- 菜单 -->
+            &lt;!&ndash; 菜单 &ndash;&gt;
             <el-menu :default-openeds="['1']" style="border: none;" background-color="black" text-color="#fff" active-text-color="#ffd04b"
                      default-active="home"
                      class="el-menu-vertical-demo" :collapse="isCollapse">
@@ -64,14 +64,19 @@
                     </el-col>
                 </el-row>
             </el-header>
-            <!-- 主体区域 -->
+            &lt;!&ndash; 主体区域 &ndash;&gt;
             <el-main>
                 <div style="padding: 10px; font-size: 30px; color: red">
                     我擦！小伙子你不讲武德，竟然偷窥哀家洗澡！
                 </div>
             </el-main>
         </el-container>
-    </el-container>
+    </el-container>-->
+    <el-main>
+        <div style="padding: 10px; font-size: 30px; color: red">
+            账号没有相应的权限，无法访问
+        </div>
+    </el-main>
 </div>
 
 <script src="../../js/echarts.min.js"></script>
