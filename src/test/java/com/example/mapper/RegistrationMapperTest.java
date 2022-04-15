@@ -1,14 +1,11 @@
 package com.example.mapper;
 
-import com.example.entity.User;
 import com.example.entity.dto.RegistrationDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @SpringBootTest
 class RegistrationMapperTest {

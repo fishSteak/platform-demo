@@ -28,34 +28,34 @@
     <el-input size='small' v-model="search" style="width: 20%;" suffix-icon="el-icon-search" placeholder="请输入名称按回车搜索"
               @keyup.enter.native="loadTable"></el-input>
     <el-button type="primary" size="small" @click="loadTable" icon="el-icon-search">搜索</el-button>
-    <el-button size='small' @click="add" type="primary" style="float: right">新增</el-button>
+    <!--<el-button size='small' @click="add" type="primary" style="float: right">新增</el-button>-->
     <!--    <el-upload action="/files/upload" :on-success="successUpload" :show-file-list="false" style="display: inline-block">-->
     <!--        <el-button size='small' type="primary">导入</el-button>-->
     <!--    </el-upload>-->
     <!--    <el-button size='small' @click="exp" type="primary"  style="margin: 10px 0">导出</el-button>-->
     <el-table :data="tableData" border stripe style="width: 100%">
-        <el-table-column prop="id" label="ID" width="50"></el-table-column>
+        <el-table-column sortable prop="id" label="ID" width="50"></el-table-column>
         <el-table-column prop="user.username" label="用户名"></el-table-column>
         <el-table-column prop="user.nickName" label="用户别名"></el-table-column>
         <el-table-column prop="user.email" label="邮箱"></el-table-column>
         <el-table-column prop="user.address" label="地址"></el-table-column>
-        <el-table-column prop="user.age" label="年龄"></el-table-column>
+        <el-table-column sortable prop="user.age" label="年龄"></el-table-column>
         <el-table-column label="放行/阻止">
             <template slot-scope="scope">
                 <el-switch active-color="#13ce66"
                            inactive-color="#ff4949"
-                        v-model="scope.row.state"
-                        @change="switchEdit(scope.row)">
+                           v-model="scope.row.state"
+                           @change="switchEdit(scope.row)">
                 </el-switch>
             </template>
         </el-table-column>
-        <el-table-column prop="time" label="创建时间"></el-table-column>
+        <el-table-column sortable prop="time" label="创建时间"></el-table-column>
         <el-table-column
                 fixed="right"
                 label="操作"
                 width="200">
             <template slot-scope="scope">
-                <el-button type="primary" icon="el-icon-edit" circle size='small' @click="edit(scope.row)"></el-button>
+                <!--<el-button type="primary" icon="el-icon-edit" circle size='small' @click="edit(scope.row)"></el-button>-->
                 <el-popconfirm
                         @onConfirm="del(scope.row.id)"
                         title="确定删除？">
@@ -80,7 +80,7 @@
         </el-pagination>
     </div>
 
-    <el-dialog title="活动报名信息" :visible.sync="dialogFormVisible" width="40%"
+    <!--<el-dialog title="活动报名信息" :visible.sync="dialogFormVisible" width="40%"
                :close-on-click-modal="false">
         <el-form :model="entity">
             <el-form-item label="活动id" label-width="120px">
@@ -105,7 +105,7 @@
             <el-button @click="dialogFormVisible = false">取 消</el-button>
             <el-button type="primary" @click="save">确 定</el-button>
         </div>
-    </el-dialog>
+    </el-dialog>-->
 </div>
 
 <script src="../../js/jquery.min.js"></script>

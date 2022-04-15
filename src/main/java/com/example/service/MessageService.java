@@ -25,7 +25,7 @@ public class MessageService extends ServiceImpl<MessageMapper, Message> {
         List<Message> list = list(queryWrapper);
         for (Message Message : list) {
             User one = userService.getOne(Wrappers.<User>lambdaQuery().eq(User::getUsername, Message.getUsername()));
-            Message.setAvatar("http://localhost:9999/files/" + one.getAvatar());
+            Message.setAvatar("/files/" + one.getAvatar());
             Long parentId = Message.getParentId();
             list.stream().filter(c -> c.getId().equals(parentId)).findFirst().ifPresent(Message::setParentMessage);
         }

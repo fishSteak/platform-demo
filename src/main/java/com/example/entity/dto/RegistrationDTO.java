@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 public class RegistrationDTO {
     /**
-     * 主键
+     * 主键 流水号
      */
     private Long id;
 
@@ -23,6 +23,20 @@ public class RegistrationDTO {
      */
     private Long activityId;
 
-    List<User> users;
+    /**
+     * 通过状态
+     */
+    private Boolean state;
 
+    /**
+     * 申请时间
+     */
+    private String time;
+
+    /**
+     * 响应内容
+     */
+    private String context;
+    //    List<User> users;
+    User user;
 }

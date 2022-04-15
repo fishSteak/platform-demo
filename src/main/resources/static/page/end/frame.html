@@ -46,10 +46,12 @@
                     <el-col :span="2" :offset="21" style="text-align: right">
                         <span style="color: white; margin-right: 10px">{{user.nickName}}</span>
                         <el-dropdown>
-                            <img :src=`/files/${user.avatar}`
+                            <img :src="['/files/'+user.avatar]"
                                  style="width: 40px; height: 40px; margin-right: 10px; border-radius: 50%">
-                            <el-dropdown-menu slot="dropdown" style="color: black; cursor: pointer; text-align: center;">
-                                <span @click="handleSelect('person')" style="display:inline-block; padding: 10px 0; width: 100px; ">个人信息</span>
+                            <el-dropdown-menu slot="dropdown"
+                                              style="color: black; cursor: pointer; text-align: center;">
+                                <span @click="handleSelect('person')"
+                                      style="display:inline-block; padding: 10px 0; width: 100px; ">个人信息</span>
                                 <span @click="logout" style="display:block; width: 100px;  ">退出</span>
                             </el-dropdown-menu>
                         </el-dropdown>

@@ -1,11 +1,10 @@
 package com.example.entity;
 
+import com.baomidou.mybatisplus.annotation.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import com.baomidou.mybatisplus.annotation.TableId;
 
 import java.util.Date;
 
@@ -42,7 +41,12 @@ public class Activity extends Model<Activity> {
     /**
       * 人数总量 
       */
-    private Long number;
+    private Integer number;
+
+    /**
+     * 人数剩余
+     */
+    private Integer surplus;
 
     /**
       * 开始时间 
@@ -63,6 +67,9 @@ public class Activity extends Model<Activity> {
     /**
       * 乐观锁 
       */
+    @ApiModelProperty("乐观锁")
+    @TableField("version")
+    @Version
     private Integer version;
 
 }

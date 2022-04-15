@@ -4,21 +4,19 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.io.IoUtil;
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.poi.excel.ExcelUtil;
 import cn.hutool.poi.excel.ExcelWriter;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.example.common.Result;
-import com.example.entity.Activity;
-import com.example.service.ActivityService;
-import com.example.entity.User;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import com.example.common.Result;
+import com.example.entity.Activity;
+import com.example.entity.User;
 import com.example.exception.CustomException;
-import cn.hutool.core.util.StrUtil;
+import com.example.service.ActivityService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
@@ -27,8 +25,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.net.URLEncoder;
-import java.util.*;
-import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/activity")
@@ -76,12 +76,17 @@ public class ActivityController {
 
     @GetMapping("/page")
     public Result<?> findPage(@RequestParam(required = false, defaultValue = "") String name,
-                              @RequestParam(required = false, defaultValue = "1") Integer pageNum,
-                              @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                              @RequestParam(required = false, defaultValue = "") Boolean state,
+                              @NotNull @RequestParam(defaultValue = "1") Integer pageNum,
+                              @NotNull @RequestParam(defaultValue = "10") Integer pageSize) {
         LambdaQueryWrapper<Activity> query = Wrappers.<Activity>lambdaQuery().orderByDesc(Activity::getId);
         if (StrUtil.isNotBlank(name)) {
             query.like(Activity::getName, name);
         }
+        if (state != null) {
+            query.eq(Activity::getState, state);
+        }
+        query.orderByDesc(Activity::getId);
         return Result.success(activityService.page(new Page<>(pageNum, pageSize), query));
     }
 
@@ -134,7 +139,7 @@ public class ActivityController {
             obj.setEndtime(DateUtil.parseDateTime((String) row.get(2)));
             obj.setImg((String) row.get(3));
             obj.setName((String) row.get(4));
-            obj.setNumber(Long.valueOf((String) row.get(5)));
+            obj.setNumber(Integer.valueOf((String) row.get(5)));
             obj.setStarttime(DateUtil.parseDateTime((String) row.get(6)));
 //            obj.setState((String) row.get(7));
             obj.setUsername((String) row.get(8));

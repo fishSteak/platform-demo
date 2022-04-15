@@ -14,7 +14,9 @@ import com.example.exception.CustomException;
 import com.example.service.ActivityService;
 import com.example.service.RegistrationService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletOutputStream;
@@ -27,6 +29,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/registration")
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
@@ -124,11 +127,14 @@ public class RegistrationController {
      * @param activityId 活动ID
      * @return Result
      */
+    @Transactional
     @PostMapping("/enroll/{activityId}")
     public Result<?> enroll(@NotNull @PathVariable Long activityId) {
         User user = (User) request.getSession().getAttribute("user");
         Activity activity = activityService.getById(activityId);
         if (activity == null) return Result.error("500", "找不到对应活动");
+        //活动已关闭
+        if(!activity.getState())return Result.error("500", "活动已关闭");
         //重复报名活动
         LambdaQueryWrapper<Registration> queryWrapper = new QueryWrapper<Registration>().lambda();
         queryWrapper.eq(Registration::getActivityId, activityId)
@@ -140,6 +146,17 @@ public class RegistrationController {
         registration.setUserId(user.getId());
         registration.setActivityId(activity.getId());
         boolean save = registrationService.save(registration);
+        if (save){
+            //成功报名人数减一
+            Activity activity1 = activityService.getById(activityId);
+            if (activity1.getSurplus()<=0) return Result.success("没有名额了,报名失败");
+            activity1.setSurplus(activity1.getSurplus()-1);
+            boolean b = activityService.save(activity1);
+            if (!b){
+                log.error("剩余人数不符，发生错误,活动id{}",activityId);
+                return Result.success("剩余人数不符，发生错误");
+            }
+        }
         String msg = save ? "报名成功" : "报名失败";
         return Result.success(msg);
     }

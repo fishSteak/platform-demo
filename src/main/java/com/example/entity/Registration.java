@@ -1,11 +1,10 @@
 package com.example.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Data;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 @Data
 @TableName("t_registration")
@@ -43,4 +42,8 @@ public class Registration extends Model<Registration> {
      */
     private Long userId;
 
+    @ApiModelProperty("乐观锁")
+    @TableField("version")
+    @Version
+    private Integer version;
 }
