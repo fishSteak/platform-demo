@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.api;
 
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;

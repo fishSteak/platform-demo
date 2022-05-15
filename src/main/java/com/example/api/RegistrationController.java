@@ -1,27 +1,29 @@
-package com.example.controller;
+package com.example.api;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.io.IoUtil;
 import cn.hutool.poi.excel.ExcelUtil;
 import cn.hutool.poi.excel.ExcelWriter;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.common.Result;
 import com.example.entity.Activity;
 import com.example.entity.Registration;
 import com.example.entity.User;
+import com.example.entity.dto.PushPlusData;
+import com.example.entity.dto.RegistrationDTO;
+import com.example.entity.dto.UserDTO;
 import com.example.exception.CustomException;
 import com.example.service.ActivityService;
 import com.example.service.RegistrationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.net.URLEncoder;
@@ -57,13 +59,13 @@ public class RegistrationController {
     }
 
     @DeleteMapping("/{id}")
-    public Result<?> delete(@PathVariable Long id) {
+    public Result<?> delete(@NotNull @PathVariable Long id) {
         registrationService.removeById(id);
         return Result.success();
     }
 
     @GetMapping("/{id}")
-    public Result<?> findById(@PathVariable Long id) {
+    public Result<?> findById(@NotNull @PathVariable Long id) {
         return Result.success(registrationService.getById(id));
     }
 
@@ -76,9 +78,9 @@ public class RegistrationController {
      * 根据活动id来拿到报名用户，分页查找。存在用户名字关键词就查找用户名字的用户;
      *
      * @param activityId 活动id
-     * @param username 用户名
-     * @param pageNum 数据页
-     * @param pageSize 数据页大小
+     * @param username   用户名
+     * @param pageNum    数据页
+     * @param pageSize   数据页大小
      * @return Result
      */
     @GetMapping("/page")
@@ -86,24 +88,31 @@ public class RegistrationController {
                               @RequestParam(defaultValue = "", value = "username") String username,
                               @RequestParam(required = false, defaultValue = "1", value = "pageNum") Integer pageNum,
                               @RequestParam(required = false, defaultValue = "10", value = "pageSize") Integer pageSize) {
-        return Result.success( registrationService.getRegistrationDTOs(Long.valueOf(activityId), username, pageNum, pageSize));
+        return Result.success(registrationService.getRegistrationDTOs(Long.valueOf(activityId), username, pageNum, pageSize));
     }
 
     @GetMapping("/export")
-    public void export(HttpServletResponse response) throws IOException {
+    public void export(HttpServletResponse response, @NotNull @RequestParam("activityId") Long activityId) throws IOException {
 
+        List<RegistrationDTO> all = registrationService.getRegistrationByActivityId(activityId);
+        Activity activity = activityService.getById(activityId);
         List<Map<String, Object>> list = CollUtil.newArrayList();
 
-        List<Registration> all = registrationService.list();
-        for (Registration obj : all) {
+//        List<Registration> all = registrationService.list();
+        for (RegistrationDTO obj : all) {
             Map<String, Object> row = new LinkedHashMap<>();
             row.put("活动id", obj.getActivityId());
-            row.put("响应内容", obj.getContext());
-            row.put("流水号", obj.getId());
-            row.put("状态0不通过 1通过", obj.getState());
-            row.put("申请时间(用户申请参加活动的时间)", obj.getTime());
-            row.put("用户id", obj.getUserId());
-
+            row.put("活动名", activity.getName());
+            row.put("报名序号", obj.getId());
+            row.put("通过审核", obj.getState());
+            row.put("审核响应", obj.getContext());
+            row.put("报名时间", obj.getTime());
+            User user = obj.getUser();
+            row.put("用户ID", user.getId());
+            row.put("用户名", user.getUsername());
+            row.put("昵称", user.getNickName());
+            row.put("邮箱", user.getEmail());
+            row.put("电话", user.getPhone());
             list.add(row);
         }
 
@@ -112,7 +121,7 @@ public class RegistrationController {
         writer.write(list, true);
 
         response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8");
-        String fileName = URLEncoder.encode("活动报名信息", "UTF-8");
+        String fileName = URLEncoder.encode(activity.getName() + "用户报名信息表", "UTF-8");
         response.setHeader("Content-Disposition", "attachment;filename=" + fileName + ".xlsx");
 
         ServletOutputStream out = response.getOutputStream();
@@ -127,37 +136,16 @@ public class RegistrationController {
      * @param activityId 活动ID
      * @return Result
      */
-    @Transactional
+
     @PostMapping("/enroll/{activityId}")
     public Result<?> enroll(@NotNull @PathVariable Long activityId) {
-        User user = (User) request.getSession().getAttribute("user");
-        Activity activity = activityService.getById(activityId);
-        if (activity == null) return Result.error("500", "找不到对应活动");
-        //活动已关闭
-        if(!activity.getState())return Result.error("500", "活动已关闭");
-        //重复报名活动
-        LambdaQueryWrapper<Registration> queryWrapper = new QueryWrapper<Registration>().lambda();
-        queryWrapper.eq(Registration::getActivityId, activityId)
-                .eq(Registration::getUserId, user.getId());
-        Registration one = registrationService.getOne(queryWrapper);
-        if (one != null) return Result.success("已经报名了该活动");
-        //
-        Registration registration = new Registration();
-        registration.setUserId(user.getId());
-        registration.setActivityId(activity.getId());
-        boolean save = registrationService.save(registration);
-        if (save){
-            //成功报名人数减一
-            Activity activity1 = activityService.getById(activityId);
-            if (activity1.getSurplus()<=0) return Result.success("没有名额了,报名失败");
-            activity1.setSurplus(activity1.getSurplus()-1);
-            boolean b = activityService.save(activity1);
-            if (!b){
-                log.error("剩余人数不符，发生错误,活动id{}",activityId);
-                return Result.success("剩余人数不符，发生错误");
-            }
-        }
-        String msg = save ? "报名成功" : "报名失败";
-        return Result.success(msg);
+        return registrationService.enrollActivity(getUser(), activityId);
+    }
+
+    @PostMapping("/pushMsg/{activityId}/{state}")
+    public Result<?> pushMsgToPushPlus(@PathVariable @NotBlank Long activityId, @PathVariable @NotEmpty Boolean state,
+                                       @NotBlank @RequestBody PushPlusData pushPlusData) {
+        List<UserDTO> userDTOList = registrationService.sendMsg(activityId, state, pushPlusData);
+        return Result.success("200", userDTOList, "发送消息成功");
     }
 }

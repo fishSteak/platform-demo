@@ -21,6 +21,9 @@
                         <el-form-item label="用户名" label-width="100px">
                             <el-input v-model="user.username" autocomplete="off" style="width: 80%"></el-input>
                         </el-form-item>
+                        <el-form-item label="昵称" label-width="100px">
+                            <el-input v-model="user.nickName" autocomplete="off" style="width: 80%"></el-input>
+                        </el-form-item>
                         <el-form-item label="邮箱" label-width="100px">
                             <el-input v-model="user.email" autocomplete="off" style="width: 80%"></el-input>
                         </el-form-item>
@@ -30,20 +33,34 @@
                         <el-form-item label="密码" label-width="100px">
                             <el-input show-password v-model="user.password" autocomplete="off" style="width: 80%"></el-input>
                         </el-form-item>
+                        <el-form-item label="微信令牌" label-width="100px">
+                            <el-input readonly="true" v-model="user.token" autocomplete="off" style="width: 80%"></el-input>
+                            <el-button @click="getWechatCode">绑定微信</el-button>
+                        </el-form-item>
                     </el-form>
 
                     <div style="padding: 10px 0; text-align: center">
                         <el-button type="primary" @click="save">保 存</el-button>
                     </div>
                 </el-card>
-
-
             </div>
 
         </el-col>
     </el-row>
 
-
+    <el-dialog
+            title="微信绑定"
+            :visible.sync="centerDialogVisible"
+            width="30%"
+            center>
+        <span>扫描微信公众号二维码</span>
+        <div>当前token:{{user.token}}</div>
+        <img style="width: 100%" :src="weChatImgSrc">
+        <span slot="footer" class="dialog-footer">
+    <el-button @click="closeTagLog">取 消</el-button>
+    <el-button type="primary" @click="closeTagLog">确 定</el-button>
+  </span>
+    </el-dialog>
 
 </div>
 
@@ -58,6 +75,8 @@
         el: "#wrapper",
         data: {
             user: {},
+            weChatImgSrc: "",
+            centerDialogVisible: false
         },
         created() {
             $.ajax({url: '/api/user/session', method: "GET", async: false, success: (res) => {this.user = res.data || {}}})
@@ -102,6 +121,43 @@
                     }
                 })
             },
+            getWechatCode() {
+                if (JSON.stringify(this.user) !== "{}") {
+                    $.post("/api/user/getCode/").then(res => {
+                        console.log(res);
+                        this.weChatImgSrc = res.data;
+                        this.centerDialogVisible = true;
+                    });
+                    this.s2 = setInterval(() => {
+                        $.ajax({
+                            url: ("/api/user/confirmCode/"),
+                            type: "post",
+                            contentType: "application/json"
+                        }).then(res => {
+                            //确认成功后停止循环;
+                            if (String(res.code) === "200") {
+                                clearInterval(this.s2);
+                                console.log("获取token成功了");
+                                this.openMsg("获取token成功了");
+                                this.centerDialogVisible = false;
+                            }
+                        });
+                    }, 1000);
+                } else {
+                    this.openMsg("请先登录")
+                }
+            },
+            openMsg(str) {
+                this.$notify({
+                    title: '消息提示',
+                    message: str,
+                    type: 'success'
+                });
+            },
+            closeTagLog() {
+                this.centerDialogVisible = false;
+                clearInterval(this.s2);
+            }
         }
     })
 </script>

@@ -46,4 +46,5 @@ public class Registration extends Model<Registration> {
     @TableField("version")
     @Version
     private Integer version;
+
 }

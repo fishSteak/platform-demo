@@ -16,7 +16,7 @@ import java.util.Map;
 public class MybatisCodeGenerator {
     private static final DruidDataSource ds = new DruidDataSource();
 
-    private static final String schemaName = "x_admin";   // 数据库名称，必填
+    private static final String schemaName = "adb";   // 数据库名称，必填
     private static final String[] table = {"t_registration", "Registration"};   // 必填，第一个是表名，第二个是实体类的名字
     private static final String modelName = "活动报名";   // 必填
 
@@ -197,8 +197,8 @@ public class MybatisCodeGenerator {
         map.put("modelName", modelName);
         map.put("exportCode", exportCode);
         map.put("importCode", importCode);
-        String format = StrUtil.format(FileUtil.readUtf8String(BaseFilePath + "/utils/generator/template/controller.template"), map);
-        FileUtil.writeString(format, BaseFilePath + "/controller/" + entityName + "Controller" + ".java", "UTF-8");
+        String format = StrUtil.format(FileUtil.readUtf8String(BaseFilePath + "/utils/generator/template/api.template"), map);
+        FileUtil.writeString(format, BaseFilePath + "/api/" + entityName + "Controller" + ".java", "UTF-8");
         System.out.println(entityName + "Controller生成成功！");
     }
 

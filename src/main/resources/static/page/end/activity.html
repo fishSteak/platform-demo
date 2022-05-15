@@ -23,29 +23,20 @@
               @keyup.enter.native="loadTable"></el-input>
     <el-button type="primary" size="small" @click="loadTable" icon="el-icon-search">搜索</el-button>
     <el-button size='small' @click="add" type="primary" style="margin: 10px 0;float: right">新增</el-button>
-    <el-button size='small' @click="exp" type="primary" style="margin: 10px 0;float: right">导出</el-button>
+    <el-button size='small' @click="exp" type="success" style="margin: 10px 0;float: right">导出</el-button>
     <el-table :data="tableData" border stripe style="width: 100%">
         <el-table-column sortable prop="id" label="ID" width="40"></el-table-column>
         <el-table-column prop="name" label="活动名"></el-table-column>
-        <el-table-column prop="content" label="内容"></el-table-column>
+        <!--        <el-table-column prop="content" label="内容"></el-table-column>-->
         <el-table-column label="图片">
-            <template slot-scope="scope">
+                <template slot-scope="scope">
                 <el-image style="width: 100px; height: 100px" :src="scope.row.img"
-                          :preview-src-list="[scope.row.img]"></el-image>
+                          :preview-src-list="[scope.row.img]" fit='scale-down'></el-image>
             </template>
         </el-table-column>
-        <el-table-column sortable prop="surplus" label="人数剩余"></el-table-column>
-        <el-table-column sortable prop="number" label="人数总量"></el-table-column>
+        <el-table-column sortable prop="surplus" label="报名数剩余" width="50"></el-table-column>
         <el-table-column sortable prop="starttime" label="开始时间"></el-table-column>
         <el-table-column sortable prop="endtime" label="结束时间"></el-table-column>
-<!--        <el-table-column label="状态">-->
-<!--            <template slot-scope="scope">-->
-<!--                <el-tag-->
-<!--                        :type="scope.row.state ? 'primary' : 'success'">-->
-<!--                    {{scope.row.state ? "开启" : "关闭"}}-->
-<!--                </el-tag>-->
-<!--            </template>-->
-<!--        </el-table-column>-->
         <el-table-column label="开启/关闭">
             <template slot-scope="scope">
                 <el-switch active-color="#13ce66"
@@ -56,6 +47,7 @@
             </template>
         </el-table-column>
         <el-table-column prop="username" label="举办人"></el-table-column>
+        <el-table-column prop="phone" label="联系方式"></el-table-column>
         <!--  <el-table-column prop="version" label="乐观锁"></el-table-column>-->
 
         <el-table-column
@@ -91,12 +83,21 @@
     <el-dialog title="活动信息" :visible.sync="dialogFormVisible" width="40%"
                :close-on-click-modal="false">
         <el-form :model="entity">
-            <el-form-item label="内容" label-width="120px">
-                <el-input v-model="entity.content" autocomplete="off" style="width: 80%"></el-input>
+            <el-form-item label="活动名" label-width="120px">
+                <el-input v-model="entity.name" autocomplete="off" style="width: 80%"></el-input>
             </el-form-item>
-            <el-form-item label="结束时间" label-width="120px">
-                <el-date-picker style="width: 80%" v-model="entity.endtime" type="datetime"
-                                value-format="yyyy-MM-dd HH:mm:ss" placeholder="选择日期时间"></el-date-picker>
+            <el-form-item label="日期范围">
+                <el-date-picker
+                        value-format="yyyy-MM-dd HH:mm"
+                        format="yyyy-MM-dd HH:mm"
+                        v-model="value2"
+                        type="datetimerange"
+                        :picker-options="pickerOptions"
+                        range-separator="至"
+                        start-placeholder="开始日期"
+                        end-placeholder="结束日期"
+                        align="right">
+                </el-date-picker>
             </el-form-item>
             <el-form-item label="图片" label-width="120px">
                 <el-upload action="/files/upload" :on-success="fileSuccessUpload"
@@ -104,28 +105,18 @@
                     <el-button size="small" type="primary">点击上传</el-button>
                 </el-upload>
             </el-form-item>
-            <el-form-item label="活动名" label-width="120px">
-                <el-input v-model="entity.name" autocomplete="off" style="width: 80%"></el-input>
+            <el-form-item label="内容" label-width="120px">
+                <el-input type="textarea" v-model="entity.content" autocomplete="off" style="width: 80%"></el-input>
             </el-form-item>
             <el-form-item label="人数剩余" label-width="120px">
                 <el-input v-model="entity.surplus" autocomplete="off" style="width: 80%"></el-input>
-            </el-form-item><el-form-item label="人数总量" label-width="120px">
-                <el-input v-model="entity.number" autocomplete="off" style="width: 80%"></el-input>
-            </el-form-item>
-            <el-form-item label="开始时间" label-width="120px">
-                <el-date-picker style="width: 80%" v-model="entity.starttime" type="datetime"
-                                value-format="yyyy-MM-dd HH:mm:ss" placeholder="选择日期时间"></el-date-picker>
-            </el-form-item>
-            <el-form-item label="状态 false关闭 true开启" label-width="120px">
-                <el-input v-model="entity.state" autocomplete="off" style="width: 80%"></el-input>
             </el-form-item>
             <el-form-item label="举办人" label-width="120px">
                 <el-input v-model="entity.username" autocomplete="off" style="width: 80%"></el-input>
             </el-form-item>
-            <!--      <el-form-item label="乐观锁" label-width="120px">
-                      <el-input v-model="entity.version" autocomplete="off" style="width: 80%"></el-input>
-                  </el-form-item>-->
-
+            <el-form-item label="举办方联系方式" label-width="120px">
+                <el-input v-model="entity.phone" autocomplete="off" style="width: 80%"></el-input>
+            </el-form-item>
         </el-form>
         <div slot="footer" class="dialog-footer">
             <el-button @click="dialogFormVisible = false">取 消</el-button>
@@ -141,7 +132,6 @@
 
 
 <script>
-
     let urlBase = "/api/activity/";
     new Vue({
         el: "#wrapper",
@@ -157,6 +147,34 @@
             entity: {},
             isCollapse: false,
             search: '',
+            pickerOptions: {
+                shortcuts: [{
+                    text: '最近一周',
+                    onClick(picker) {
+                        const end = new Date();
+                        const start = new Date();
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+                        picker.$emit('pick', [start, end]);
+                    }
+                }, {
+                    text: '最近一个月',
+                    onClick(picker) {
+                        const end = new Date();
+                        const start = new Date();
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+                        picker.$emit('pick', [start, end]);
+                    }
+                }, {
+                    text: '最近三个月',
+                    onClick(picker) {
+                        const end = new Date();
+                        const start = new Date();
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+                        picker.$emit('pick', [start, end]);
+                    }
+                }]
+            },
+            value2: '',
         },
         created() {
             this.user = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem("user")) : {};
@@ -220,6 +238,8 @@
             },
             save() {
                 let type = this.entity.id ? "PUT" : "POST";
+                this.entity.starttime=this.value2[0];
+                this.entity.endtime=this.value2[1];
                 $.ajax({
                     url: urlBase,
                     type: type,
@@ -242,10 +262,14 @@
                 })
             },
             edit(obj) {
-                // console.log(JSON.parse(JSON.stringify(obj)))
                 this.entity = JSON.parse(JSON.stringify(obj));
+                let range=new Array();
+                range[0]=this.entity.starttime;
+                range[1]=this.entity.endtime;
+                this.value2= range;
                 this.fileList = [];
                 this.dialogFormVisible = true;
+                console.log(this.entity)
             },
             switchEdit(obj) {
                 this.entity = JSON.parse(JSON.stringify(obj));
@@ -277,6 +301,11 @@
                 localStorage.setItem("activityId", JSON.parse(JSON.stringify(obj)).id);
                 localStorage.setItem("activityName", JSON.parse(JSON.stringify(obj)).name);
                 parent.changeIndex('registration');
+            },
+            test333(){
+                console.log();
+                console.log(this.entity.dateRange);
+                console.log(this.value2);
             }
         }
     })

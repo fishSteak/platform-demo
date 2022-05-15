@@ -38,9 +38,23 @@
 
     <el-row :gutter="24">
         <el-col :span="18" :offset="3">
-            <el-tabs type="border-card">
-                <div style="margin: 10px 0">
+            <el-tabs type="border-card" tab-position="left">
+<!--                <el-tab-pane >-->
                     <el-card>
+                        <div style="border-bottom: 1px solid orangered; padding: 10px 0; font-size: 20px">系统公告</div>
+                        <el-collapse accordion v-model="active">
+                            <el-collapse-item :name="index" v-for="(item ,index) in notices">
+                                <template slot="title">
+                                    <b>{{ item.title }}</b>
+                                    <span style="margin-left: 50px; color: #888">{{ item.time }}</span>
+                                </template>
+                                <div style="padding: 0 20px">{{ item.content }}</div>
+                            </el-collapse-item>
+                        </el-collapse>
+                    </el-card>
+
+                <el-card>
+                    <div style="margin: 10px 0">
                         <div style="border-bottom: 1px solid orangered; padding: 10px 0; font-size: 20px">活动列表</div>
                         <el-input size='small' v-model="search" style="width: 20%;" suffix-icon="el-icon-search"
                                   placeholder="请输入活动名称按回车搜索"
@@ -80,20 +94,21 @@
                                 </el-col>
                             </el-row>
                         </div>
-                    </el-card>
-                </div>
-                <!-- 分页 -->
-                <div style="background-color: white">
-                    <el-pagination
-                            @size-change="handleSizeChange"
-                            @current-change="handleCurrentChange"
-                            :current-page="pageNum"
-                            :page-sizes="[9,18]"
-                            :page-size="pageSize"
-                            layout="total, sizes, prev, pager, next, jumper"
-                            :total="total">
-                    </el-pagination>
-                </div>
+                    </div>
+                    <!-- 分页 -->
+                    <div style="background-color: white">
+                        <el-pagination
+                                @size-change="handleSizeChange"
+                                @current-change="handleCurrentChange"
+                                :current-page="pageNum"
+                                :page-sizes="[9,18]"
+                                :page-size="pageSize"
+                                layout="total, sizes, prev, pager, next, jumper"
+                                :total="total">
+                        </el-pagination>
+                    </div>
+<!--                </el-tab-pane>-->
+                </el-card>
             </el-tabs>
         </el-col>
     </el-row>
@@ -161,8 +176,14 @@
             centerDialogVisible: false,
             entity: [],
             state: true, //活动的状态 true开启
+            notices: "",
+            activeName: '1',
+            active: 0
         },
         created() {
+            $.get("/api/notice/").then((res) => {
+                this.notices = res.data;
+            });
             $.ajax({
                 url: '/api/user/session',
                 method: "GET",
@@ -170,7 +191,7 @@
                 success: (res) => {
                     this.user = res.data || {}
                 }
-            })
+            });
             this.loadTable(true)
         },
         methods: {

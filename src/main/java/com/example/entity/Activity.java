@@ -60,16 +60,20 @@ public class Activity extends Model<Activity> {
     private Boolean state;
 
     /**
-      * 举办人 
+      * 举办方名字
       */
     private String username;
 
     /**
-      * 乐观锁 
+      * 乐观锁
       */
     @ApiModelProperty("乐观锁")
     @TableField("version")
     @Version
     private Integer version;
 
+    /**
+     * 举办方联系方式
+     */
+    private String phone ;
 }

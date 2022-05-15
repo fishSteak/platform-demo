@@ -32,6 +32,7 @@ public class User extends Model<User> {
     private String avatar;
     private String address;
     private Integer age;
+    private String token;
 
     /**
      * 权限
@@ -41,5 +42,6 @@ public class User extends Model<User> {
 
     @TableField(exist = false)
     private List<Permission> permission;
+
 
 }

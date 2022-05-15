@@ -27,7 +27,18 @@ class RegistrationMapperTest {
 
     @Test
     void getRegistrationAndUserByAId(){
-        List<List<?>> lists = registrationMapper.getRegistrationAndUserByAId(11L, "[", 0, 10);
+        List<List<?>> lists = registrationMapper.getRegistrationAndUserByAId(11L, "a", 0, 10);
+        List<RegistrationDTO> dtoList = (List<RegistrationDTO>) lists.get(0);
+        Long total = Long.valueOf(lists.get(1).get(0).toString());
+        for (RegistrationDTO registrationDTO : dtoList) {
+            System.out.println("registrationDTO = " + registrationDTO);
+        }
+        System.out.println("total = " + total);
+    }
+
+    @Test
+    void getRegistrationAndUserByAId2(){
+        List<List<?>> lists = registrationMapper.getRegistrationAndUserByAId(11L,null,null,null);
         List<RegistrationDTO> dtoList = (List<RegistrationDTO>) lists.get(0);
         Long total = Long.valueOf(lists.get(1).get(0).toString());
         for (RegistrationDTO registrationDTO : dtoList) {

@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.api;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.io.FileUtil;
@@ -15,16 +15,27 @@ import com.example.entity.User;
 import com.example.exception.CustomException;
 import com.example.service.LogService;
 import com.example.service.UserService;
+import com.example.utils.SessionContain;
+import lombok.SneakyThrows;
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @RestController
 @RequestMapping("/api/user")
@@ -56,7 +67,7 @@ public class UserController {
      * @return
      */
     @PostMapping("/login")
-    public Result<User> login(@RequestBody User user, HttpServletRequest request) {
+    public Result<User> login(@NotNull @RequestBody User user, HttpServletRequest request) {
         User res = userService.login(user);
         request.getSession().setAttribute("user", res);
         MAP.put(res.getUsername(), res);
@@ -73,9 +84,12 @@ public class UserController {
      * @return
      */
     @PostMapping("/register")
-    public Result<User> register(@RequestBody User user, HttpServletRequest request) {
+    public Result<User> register(@NotNull @RequestBody User user, HttpServletRequest request) {
         if (user.getPassword() == null) {
             user.setPassword("123456");
+        }
+        if (user.getAvatar() == null) {
+            user.setAvatar("1650007563001");
         }
         User dbUser = userService.register(user);
         request.getSession().setAttribute("user", user);
@@ -141,7 +155,7 @@ public class UserController {
 
     @GetMapping
     public Result<List<User>> findAll() {
-        return Result.success(userService.list( Wrappers.<User>lambdaQuery().ne(User::getUsername, "admin")));
+        return Result.success(userService.list(Wrappers.<User>lambdaQuery().ne(User::getUsername, "admin")));
     }
 
     @GetMapping("/page")
@@ -199,4 +213,63 @@ public class UserController {
         return Result.success();
     }
 
+    @PostMapping("/getCode")
+    public Result<?> getTokenCode() {
+        try {
+            //这个请求的(图片a标签)等待60S就要刷新，否则失败
+            Connection.Response response = Jsoup.connect("https://pushplus.hxtrip.com/login?redirectUrl=/message")
+                    .followRedirects(true)
+                    .method(Connection.Method.GET)
+                    .header("referer", "https://pushplus.hxtrip.com/index?pushToken=642b1182bf374b95a31dea6991749112")
+                    .execute();
+            Document doc = response.parse();
+            for (Element element : doc.select("img")) {
+                String src = element.attr("src");
+                if (src.contains("mp.weixin.qq.com")) {
+                    Elements input = doc.select("input");
+                    String code = input.get(0).attr("value");
+                    String key = input.get(1).attr("value");
+                    String url = "https://pushplus.hxtrip.com/common/wechat/confirmLogin";
+                    url += "?code=" + code;
+                    url += "&key=" + key;
+                    request.getSession().setAttribute("codeUrl", url);
+                    return Result.success(src);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return Result.error("500", "PushPlus令牌获取错误");
+    }
+
+    @PostMapping("/confirmCode")
+    @SneakyThrows
+    public Result<?> confirmCode() {
+        HttpSession session = request.getSession();
+        if (!SessionContain.haveAttribute(session, "codeUrl")) return Result.error("500", "没有请求code图片");
+        String url = (String) session.getAttribute("codeUrl");
+
+        Connection.Response response1 = Jsoup.connect(url)
+                .followRedirects(true)
+                .method(Connection.Method.GET)
+                .ignoreContentType(true)
+                .execute();
+        if (response1.hasHeader("set-cookie")) {
+            Matcher matcher = Pattern.compile("pushToken=[\\d\\w]{32}").matcher(response1.header("set-cookie"));
+            if (matcher.find()) {
+                String pushToken = matcher.group();
+                Connection.Response response = Jsoup.connect("https://pushplus.hxtrip.com/message")
+                        .header("cookie", pushToken)
+                        .method(Connection.Method.GET)
+                        .execute();
+                String pushPlusToken = response.parse().body().getElementById("token").text();
+                User user = getUser();
+                user.setToken(pushPlusToken);
+                userService.updateById(user);
+                return Result.success("200", "绑定微信成功");
+            }
+            return Result.error("500", "获取失败");
+        }
+        return Result.error("500", "set-cookie不存在,等待扫码关注");
+    }
 }

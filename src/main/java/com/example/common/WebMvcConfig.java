@@ -14,16 +14,15 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authInterceptor())
-//                .addPathPatterns("/api/**")
-                .addPathPatterns("/page/end/**")
-                .excludePathPatterns("/page/end/index.html","/page/end/frame.html"
-                        ,"/page/end/login.html", "/page/end/register.html"
-                        , "/page/end/auth.html", "/page/end/person.html");
-//                .excludePathPatterns("/api/user/login", "/api/user/register");
+                .addPathPatterns("/api/**")
+                .excludePathPatterns("/api/user/login", "/api/user/register",
+                        "/api/user/logout","/api/user/session","/api/user/getCode/","/api/user/confirmCode/","/api/user/upload/**")
+                .excludePathPatterns("/api/notice/")
+                .excludePathPatterns("/api/activity/page");
     }
 
     @Bean
-    public AuthInterceptor authInterceptor() {
+    public AuthInterceptor  authInterceptor() {
         return new AuthInterceptor();
     }
 }

@@ -67,7 +67,9 @@
         <if test="username != null">
             and u.username like concat('%',#{username},'%')
         </if>
-        LIMIT #{pageSum}, #{pageSize};
+        <if test="pageSum != null and pageSize != null">
+            LIMIT #{pageSum}, #{pageSize}
+        </if>;
         SELECT FOUND_ROWS() as total;
     </select>
 

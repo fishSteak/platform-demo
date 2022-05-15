@@ -1,0 +1,37 @@
+version: "3.3"
+services:
+  webapp:
+    image: platform:2.0
+    container_name: platform
+    working_dir: /workdir
+    restart: always
+    networks:
+      - demonet
+    ports:
+      - "12347:8080"
+    environment:
+      TZ: Asia/shanghai
+      MYSQL_URL: jdbc:mysql://db:3306/adb?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8
+    depends_on:
+      - db
+  db:
+    image: mysql:8.0
+    #    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    container_name: platform_db
+    environment:
+      MYSQL_ROOT_PASSWORD: qwe123,./
+      MYSQL_DATABASE: adb
+    ports:
+      - "3306:3306"
+    volumes:
+      - ~/mysqlData/data:/var/lib/mysql
+      - ~/mysqlData/conf/:/etc/mysql/conf.d/
+      - ~/mysqlData/init/:/docker-entrypoint-initdb.d/
+    cap_add:
+      - SYS_NICE  # CAP_SYS_NICE
+    networks:
+      - demonet
+networks:
+  demonet:
+    external: true

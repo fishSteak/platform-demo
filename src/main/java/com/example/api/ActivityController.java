@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.api;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.date.DateUtil;
@@ -15,10 +15,12 @@ import com.example.entity.Activity;
 import com.example.entity.User;
 import com.example.exception.CustomException;
 import com.example.service.ActivityService;
+import com.example.service.LogService;
+import com.example.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,13 +34,12 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/activity")
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
 public class ActivityController {
-    @Resource
-    private ActivityService activityService;
-    @Resource
-    private HttpServletRequest request;
-    @Autowired
-    HttpServletRequest httpServletRequest;
+    private final UserService userService;
+    private final ActivityService activityService;
+    private final LogService logService;
+    private final HttpServletRequest request;
 
     public User getUser() {
         User user = (User) request.getSession().getAttribute("user");
@@ -50,16 +51,19 @@ public class ActivityController {
 
     @PostMapping
     public Result<?> save(@RequestBody Activity activity) {
+        logService.log(StrUtil.format("{}发布活动：{} ", getUser().getUsername(), activity.getName()));
         return Result.success(activityService.save(activity));
     }
 
     @PutMapping
     public Result<?> update(@RequestBody Activity activity) {
+        logService.log(StrUtil.format("{}修改活动：{} ", getUser().getUsername(), activity.getName()));
         return Result.success(activityService.updateById(activity));
     }
 
     @DeleteMapping("/{id}")
     public Result<?> delete(@PathVariable Long id) {
+        logService.log(StrUtil.format("{}删除活动id：{} ", getUser().getUsername(), id));
         activityService.removeById(id);
         return Result.success();
     }
@@ -107,8 +111,6 @@ public class ActivityController {
             row.put("开始时间", obj.getStarttime());
             row.put("状态 0关闭 1开启", obj.getState());
             row.put("举办人", obj.getUsername());
-            row.put("乐观锁", obj.getVersion());
-
             list.add(row);
         }
 
@@ -141,7 +143,7 @@ public class ActivityController {
             obj.setName((String) row.get(4));
             obj.setNumber(Integer.valueOf((String) row.get(5)));
             obj.setStarttime(DateUtil.parseDateTime((String) row.get(6)));
-//            obj.setState((String) row.get(7));
+            obj.setState((Boolean) row.get(7));
             obj.setUsername((String) row.get(8));
             obj.setVersion(Integer.valueOf((String) row.get(9)));
             saveList.add(obj);

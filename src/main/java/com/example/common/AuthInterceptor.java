@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 拦截器
@@ -32,11 +34,22 @@ public class AuthInterceptor implements HandlerInterceptor {
             if (servletPath.contains(permission.getPath())) {//有路径地址，说明有权限
                 return true;
             }
-        }response.sendRedirect("/page/end/auth.html");
+        }
+
+        if (servletPath.contains("/api/user")) {
+            if (request.getMethod().equals("GET")) {//放行获取自己数据的用户请求
+                Matcher matcher = Pattern.compile("/api/user/\\d+").matcher(servletPath);
+                if (matcher.find()) {
+                    Matcher matcher1 = Pattern.compile("\\d+").matcher(matcher.group());
+                    if (matcher1.find())
+                        return matcher1.group().equals(user.getId() + "");
+                }
+            }
+            if (request.getMethod().equals("PUT")) return true;
+        }
+        response.sendRedirect("/page/end/auth.html");
         return false;
-      /*  if (permissions.stream().anyMatch(p -> servletPath.contains(p.getPath())) && !servletPath.contains("index") ) {
+//      if (permissions.stream().anyMatch(p -> servletPath.contains(p.getPath())) && !servletPath.contains("index") ) {}
 
-        }*/
     }
-
 }
