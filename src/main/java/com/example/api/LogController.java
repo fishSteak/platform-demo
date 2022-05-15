@@ -1,11 +1,10 @@
-package com.example.controller;
+package com.example.api;
 
 import com.example.common.Result;
 import com.example.entity.Log;
 import com.example.service.LogService;
 import com.example.entity.User;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +13,6 @@ import cn.hutool.core.util.StrUtil;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/log")

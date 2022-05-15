@@ -6,29 +6,63 @@
   <component name="ChangeListManager">
     <list default="true" id="c1a6b45a-c7b2-4c5a-891a-2d8f6ac66f7d" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/vo/PageVO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/file/1650007563001-头像.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/test-classes/com/example/mapper/RegistrationMapperTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/common/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/common/MybatisPlusConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/Registration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entity/dto/RegistrationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/dto/RegistrationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/page/end/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/activity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/page/end/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/page/end/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/page/front/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/page/front/index2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/common/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/common/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/common/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/common/WebMvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/ActivityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/api/ActivityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/api/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/api/LogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/api/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/NoticeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/api/NoticeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/PermissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/api/PermissionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/api/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/api/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/api/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/utils/generator/MybatisCodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/generator/MybatisCodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/utils/generator/template/controller.template" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/generator/template/controller.template" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/controller/ActivityControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/api/ActivityControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/utils/MyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/utils/MyUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Application.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/common/AuthInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/common/AuthInterceptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/common/MybatisPlusConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/common/MybatisPlusConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/common/SwaggerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/common/SwaggerConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/common/WebMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/common/WebMvcConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/controller/RegistrationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/ActivityController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/FileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/LogController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/MessageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/NoticeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/PermissionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/RegistrationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/RoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/entity/Activity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Activity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/entity/Registration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Registration.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/entity/dto/RegistrationDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/entity/dto/RegistrationDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/exception/GlobalExceptionHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/mapper/RegistrationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/mapper/RegistrationMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/MessageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/service/MessageService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/service/RegistrationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/service/RegistrationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/utils/generator/MybatisCodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/utils/generator/MybatisCodeGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/Registration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/Registration.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/images/bg.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/page/end/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/page/end/activity.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/page/end/auth.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/page/end/auth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/page/end/frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/page/end/frame.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/page/end/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/page/end/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/page/front/frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/page/front/frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/page/front/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/page/front/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/page/front/index2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/utils/MyUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/utils/MyUtils.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +113,9 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="C:\MyLocalRepository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../soft/apache-maven-3.8.5" />
         <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="C:\soft\apache-maven-3.8.5\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -92,7 +128,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="abbreviatePackageNames" value="true" />
-    <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -113,19 +148,21 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/common/handler" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\githubProject\platform-demo\src\main\resources\static\images" />
+      <recent name="C:\githubProject\platform-demo\src\main\resources\static" />
+      <recent name="C:\githubProject\platform-demo" />
       <recent name="C:\githubProject\platform-demo\src\main\java\com\example\common\handler" />
       <recent name="C:\githubProject\platform-demo\src\main\resources\static\page\front" />
-      <recent name="C:\githubProject\platform-demo\src\test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\githubProject\platform-demo\src\main\resources\static\js" />
@@ -146,8 +183,11 @@
       <command value="mvn clean " />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application">
+  <component name="RunManager" selected="Application.MyUtils">
     <configuration name="MyUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="export MAVEN_OPTS" value="-Xss2m" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="com.example.utils.MyUtils" />
       <module name="platform-demo" />
       <extension name="coverage">
@@ -160,29 +200,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PageVO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.entity.vo.PageVO" />
-      <module name="platform-demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.entity.vo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ActivityControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="platform-demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.controller.*" />
+          <option name="PATTERN" value="com.example.api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.example.controller.ActivityControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="com.example.api.ActivityControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -220,17 +247,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="platform-demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Application" />
@@ -241,19 +257,17 @@
     </configuration>
     <list>
       <item itemvalue="Application.MyUtils" />
-      <item itemvalue="Application.PageVO" />
+      <item itemvalue="JUnit.ActivityControllerTest" />
       <item itemvalue="JUnit.RegistrationMapperTest.getActivityAndUserByAId" />
       <item itemvalue="JUnit.RegistrationMapperTest.getRegistrationAndUserByAId" />
       <item itemvalue="Spring Boot.Application" />
-      <item itemvalue="JUnit.ActivityControllerTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ActivityControllerTest" />
+        <item itemvalue="Application.MyUtils" />
         <item itemvalue="JUnit.RegistrationMapperTest.getRegistrationAndUserByAId" />
         <item itemvalue="JUnit.RegistrationMapperTest.getActivityAndUserByAId" />
-        <item itemvalue="Application.PageVO" />
-        <item itemvalue="Application.MyUtils" />
+        <item itemvalue="JUnit.ActivityControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -282,7 +296,27 @@
       <workItem from="1649768411933" duration="27136000" />
       <workItem from="1649898362203" duration="33410000" />
       <workItem from="1650001386165" duration="3301000" />
-      <workItem from="1650005347696" duration="11645000" />
+      <workItem from="1650005347696" duration="12038000" />
+      <workItem from="1650097981963" duration="1466000" />
+      <workItem from="1650099881217" duration="2978000" />
+      <workItem from="1650368563247" duration="2734000" />
+      <workItem from="1650430547639" duration="966000" />
+      <workItem from="1650524477056" duration="115000" />
+      <workItem from="1650527225659" duration="1296000" />
+      <workItem from="1650609520285" duration="4701000" />
+      <workItem from="1650700329204" duration="1430000" />
+      <workItem from="1650888340901" duration="627000" />
+      <workItem from="1651146047506" duration="306000" />
+      <workItem from="1651752361547" duration="1750000" />
+      <workItem from="1651754483988" duration="610000" />
+      <workItem from="1651761808406" duration="1000" />
+      <workItem from="1651800997111" duration="2049000" />
+      <workItem from="1652499741095" duration="729000" />
+      <workItem from="1652500961029" duration="391000" />
+      <workItem from="1652501369261" duration="191000" />
+      <workItem from="1652501569580" duration="264000" />
+      <workItem from="1652501873358" duration="1101000" />
+      <workItem from="1652596205739" duration="114000" />
     </task>
     <task id="LOCAL-00001" summary="初始化``````````````````````````">
       <created>1649486739758</created>
@@ -347,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649945010493</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="基本功能实现---前端查看报名活动 待完成-">
+      <created>1650022298793</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1650022298793</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +416,8 @@
     <MESSAGE value="权限认证实现拦截和放行" />
     <MESSAGE value="前端网页的实现 切换状态  下一步做 前台页面的已经报名的信息页面" />
     <MESSAGE value="前端网页的实现 切换状态  下一步做 前台页面的已经报名的信息页面2" />
-    <option name="LAST_COMMIT_MESSAGE" value="前端网页的实现 切换状态  下一步做 前台页面的已经报名的信息页面2" />
+    <MESSAGE value="基本功能实现---前端查看报名活动 待完成-" />
+    <option name="LAST_COMMIT_MESSAGE" value="基本功能实现---前端查看报名活动 待完成-" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

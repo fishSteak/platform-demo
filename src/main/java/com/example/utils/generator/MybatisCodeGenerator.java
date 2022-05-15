@@ -197,8 +197,8 @@ public class MybatisCodeGenerator {
         map.put("modelName", modelName);
         map.put("exportCode", exportCode);
         map.put("importCode", importCode);
-        String format = StrUtil.format(FileUtil.readUtf8String(BaseFilePath + "/utils/generator/template/controller.template"), map);
-        FileUtil.writeString(format, BaseFilePath + "/controller/" + entityName + "Controller" + ".java", "UTF-8");
+        String format = StrUtil.format(FileUtil.readUtf8String(BaseFilePath + "/utils/generator/template/api.template"), map);
+        FileUtil.writeString(format, BaseFilePath + "/api/" + entityName + "Controller" + ".java", "UTF-8");
         System.out.println(entityName + "Controller生成成功！");
     }
 

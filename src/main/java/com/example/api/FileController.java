@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.api;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;

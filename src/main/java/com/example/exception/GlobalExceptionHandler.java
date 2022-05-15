@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-@ControllerAdvice(basePackages="com.example.controller")
+@ControllerAdvice(basePackages="com.example.api")
 public class GlobalExceptionHandler {
 
     private static final Log log = LogFactory.get();

@@ -1,5 +1,9 @@
 server:
-  port: 9999
+  port: 80
+#自定义banner.txt内容
+application:
+  title: 第二课堂竞赛活动管理平台
+  version: 2.0
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -7,21 +11,32 @@ spring:
     password: 123456
     url: jdbc:mysql://localhost:3306/adb?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8
     type: com.alibaba.druid.pool.DruidDataSource
-  #  jpa:
-  #    generate-ddl: false
-  #    hibernate:
-  #      ddl-auto: none
+
   servlet:
     multipart:
       max-file-size: 100MB
       max-request-size: 100MB
+  profiles:
+    active: pron
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 
-logging:
-  level:
-    com:
-      example:
-        mapper:
-          debug
+
+---
+spring:
+  profiles:
+    default: dev
+#logging:
+#  level:
+#    com:
+#      example:
+#        mapper:
+#          debug
+---
+spring:
+  profiles:
+    default: pron
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
